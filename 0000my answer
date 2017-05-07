@@ -1,0 +1,17 @@
+from PIL import Image, ImageDraw, ImageFont
+
+def picture_add_number(filepath, text):
+    image = Image.open(filepath)
+    size = image.size
+    fontsize = size[1]/4
+    fontpath = 'C:\Windows\Fonts\Arial.ttf'
+    addfont = ImageFont.truetype(fontpath, fontsize)
+    ImageDraw.Draw(image).text((3*fontsize, 0), str(text), font = addfont, fill = 'red')
+    image.save('D:\TEXT\Python Project\PYSTART\cargirladdnumber.jpg')
+    image.show()
+
+def main():
+    picture = 'D:\TEXT\Python Project\PYSTART\cargirl.jpg'
+    picture_add_number(picture, 'shixu')
+
+main()
